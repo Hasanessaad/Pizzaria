@@ -25,7 +25,7 @@ public class Item {
 
     @Getter
     @Setter
-    @Column(name = "size")
+    @Column(name = "quant")
     private int quantity;
 
     @Getter

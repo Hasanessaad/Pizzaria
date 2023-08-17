@@ -4,5 +4,5 @@ import Pizzaria.example.Pizzariadohabibi.Entity.Address;
 import Pizzaria.example.Pizzariadohabibi.Entity.Delivery;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface DeliveryRepository extends JpaRepository<Long, Delivery> {
+public interface DeliveryRepository extends JpaRepository<Delivery, Long> {
 }

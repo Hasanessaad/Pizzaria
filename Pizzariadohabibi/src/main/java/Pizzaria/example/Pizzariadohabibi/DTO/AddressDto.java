@@ -9,6 +9,7 @@ public class AddressDto {
     @Id
     @Getter
     @Setter
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Getter
