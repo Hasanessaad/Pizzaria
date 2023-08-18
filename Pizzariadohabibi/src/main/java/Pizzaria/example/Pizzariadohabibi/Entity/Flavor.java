@@ -6,7 +6,7 @@ import lombok.Setter;
 import org.springframework.boot.autoconfigure.web.WebProperties;
 
 @Entity
-@Table(name = "Flavor" , schema = "public")
+@Table(name = "Flavor" ,schema = "public")
 public class Flavor {
 
     @Id

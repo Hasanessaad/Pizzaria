@@ -1,6 +1,5 @@
 package Pizzaria.example.Pizzariadohabibi.Controller;
 
-
 import Pizzaria.example.Pizzariadohabibi.DTO.AddressDto;
 import Pizzaria.example.Pizzariadohabibi.Entity.Address;
 import Pizzaria.example.Pizzariadohabibi.Repository.AddressRepository;
@@ -11,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
 
 @RestController
 @RequestMapping("/api/address")
@@ -24,19 +22,18 @@ public class AddressController {
 
     @GetMapping("/findAll")
     public ResponseEntity<?> findAll(){
-
         try{
             List<?> addresses = addressRepository.findAll();
             return new ResponseEntity<>(addresses, HttpStatus.OK);
         }catch (Exception e){
-
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
 
-    @PostMapping("/{nameperson}")
-    public ResponseEntity<Address> createLembrete(@PathVariable String nameperson, @RequestBody AddressDto addressDto) {
-        Address address = addressService.cadastrar(nameperson,addressDto);
+    @PostMapping("/add/{clientId}")
+    public ResponseEntity<Address> cadastrar(@PathVariable Long clientId, @RequestBody AddressDto addressDto) {
+        Address address = addressService.cadastrar(clientId , addressDto);
         return ResponseEntity.status(HttpStatus.CREATED).body(address);
     }
+
 }

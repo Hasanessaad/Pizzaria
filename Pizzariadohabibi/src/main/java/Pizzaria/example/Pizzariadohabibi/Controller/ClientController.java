@@ -28,7 +28,6 @@ public class ClientController {
             List<?> addresses = clientRepository.findAll();
             return new ResponseEntity<>(addresses, HttpStatus.OK);
         }catch (Exception e){
-
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
@@ -38,5 +37,12 @@ public class ClientController {
         Client client = clientService.create(clientDto);
         return ResponseEntity.status(HttpStatus.CREATED).body(client);
     }
+
+    @PutMapping("/{clientId}")
+    public ResponseEntity<ClientDto> updateClient(@PathVariable Long clientId, @RequestBody ClientDto clientDto) {
+        ClientDto updatedClient = clientService.updateClient(clientId, clientDto);
+        return ResponseEntity.ok(updatedClient);
+    }
+
 
 }

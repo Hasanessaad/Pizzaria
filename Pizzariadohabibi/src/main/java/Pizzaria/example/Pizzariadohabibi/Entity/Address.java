@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "Address", schema = "public")
+@Table(name = "address",schema = "public")
 public class Address {
 
     @Id
@@ -29,8 +29,10 @@ public class Address {
     @Column(name = "number")
     private String number;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "client_id")
+    @Getter
+    @Setter
     private Client client;
 
 }
