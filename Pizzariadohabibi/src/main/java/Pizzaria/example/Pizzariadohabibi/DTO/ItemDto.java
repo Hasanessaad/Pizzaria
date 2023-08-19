@@ -1,42 +1,85 @@
 package Pizzaria.example.Pizzariadohabibi.DTO;
 
-import Pizzaria.example.Pizzariadohabibi.Entity.Flavor;
-import Pizzaria.example.Pizzariadohabibi.Entity.Order;
-import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+
+import java.util.List;
 
 public class ItemDto {
-    @Id
-    @Getter
-    @Setter
-    private Long id;
 
-    @Getter
-    @Setter
-    private int size;
 
-    @Getter
-    @Setter
-    private Float price;
-
-    @Getter
-    @Setter
-    private int quantity;
-
-    @Getter
-    @Setter
+    private String codigo;
+    private Float preco;
+    private Boolean pizza;
+    private Integer tamanho;
     private String extra;
-
-    @Getter
-    @Setter
     private String remove;
+    private List<Long> flavor;
 
-    @Getter
-    @Setter
-    private Flavor flavor;
+    public ItemDto() {
+    }
 
-    @Getter
-    @Setter
-    private Order order;
+    public ItemDto(String codigo, Float preco, Boolean pizza, Integer tamanho, String extra, String remove, List<Long> flavor) {
+        this.codigo = codigo;
+        this.preco = preco;
+        this.pizza = pizza;
+        this.tamanho = tamanho;
+        this.extra = extra;
+        this.remove = remove;
+        this.flavor = flavor;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public Float getPreco() {
+        return preco;
+    }
+
+    public void setPreco(Float preco) {
+        this.preco = preco;
+    }
+
+    public Boolean getPizza() {
+        return pizza;
+    }
+
+    public void setPizza(Boolean pizza) {
+        this.pizza = pizza;
+    }
+
+    public Integer getTamanho() {
+        return tamanho;
+    }
+
+    public void setTamanho(Integer tamanho) {
+        this.tamanho = tamanho;
+    }
+
+    public String getExtra() {
+        return extra;
+    }
+
+    public void setExtra(String extra) {
+        this.extra = extra;
+    }
+
+    public String getRemove() {
+        return remove;
+    }
+
+    public void setRemove(String remove) {
+        this.remove = remove;
+    }
+
+    public List<Long> getFlavor() {
+        return flavor;
+    }
+
+    public void setFlavor(List<Long> flavor) {
+        this.flavor = flavor;
+    }
 }
