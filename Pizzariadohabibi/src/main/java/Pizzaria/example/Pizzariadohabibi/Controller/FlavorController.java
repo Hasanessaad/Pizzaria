@@ -1,5 +1,6 @@
 package Pizzaria.example.Pizzariadohabibi.Controller;
 
+
 import Pizzaria.example.Pizzariadohabibi.DTO.FlavorDto;
 import Pizzaria.example.Pizzariadohabibi.Entity.Flavor;
 import Pizzaria.example.Pizzariadohabibi.Service.FlavorService;
@@ -44,4 +45,5 @@ public class FlavorController {
 
         return service.delete(id);
     }
+
 }
