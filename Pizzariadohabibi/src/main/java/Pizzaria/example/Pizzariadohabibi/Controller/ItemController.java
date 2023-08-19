@@ -1,7 +1,7 @@
 package Pizzaria.example.Pizzariadohabibi.Controller;
 
 import Pizzaria.example.Pizzariadohabibi.DTO.ItemDto;
-import Pizzaria.example.Pizzariadohabibi.Entity.
+import Pizzaria.example.Pizzariadohabibi.Entity.Item;
 import Pizzaria.example.Pizzariadohabibi.Service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

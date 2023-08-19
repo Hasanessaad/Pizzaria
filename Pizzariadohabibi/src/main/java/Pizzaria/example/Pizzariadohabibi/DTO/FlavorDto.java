@@ -1,19 +1,35 @@
 package Pizzaria.example.Pizzariadohabibi.DTO;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.persistence.*;
 
 public class FlavorDto {
-    @Id
-    @Getter
-    @Setter
-    private Long id;
+    private String nome;
 
-    @Getter
-    @Setter
-    private String name;
+    private Float preco_adicional;
+
+
+    public FlavorDto() {
+    }
+
+    public FlavorDto( String nome, Float preco_adicional) {
+        this.nome = nome;
+        this.preco_adicional = preco_adicional;
+    }
+
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public Float getPreco_adicional() {
+        return preco_adicional;
+    }
+
+    public void setPreco_adicional(Float preco_adicional) {
+        this.preco_adicional = preco_adicional;
+    }
 }
