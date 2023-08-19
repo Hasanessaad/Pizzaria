@@ -7,7 +7,7 @@ import lombok.Setter;
 import java.util.List;
 
 @Entity
-@Table(name = "Client" ,schema = "public")
+@Table(name = "Client",schema = "public" )
 public class Client {
 
     @Id
