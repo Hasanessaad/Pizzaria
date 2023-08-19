@@ -1,49 +1,99 @@
 package Pizzaria.example.Pizzariadohabibi.Entity;
 
+
+import Pizzaria.example.Pizzariadohabibi.Entity.Flavor;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+
+import java.util.List;
 
 @Entity
 @Table(name = "Item",schema = "public")
 public class Item {
     @Id
-    @Getter
-    @Setter
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "id", nullable = false)
     private Long id;
 
-    @Getter
-    @Setter
-    @Column(name = "size")
-    private int size;
 
-    @Getter
-    @Setter
-    @Column(name = "price")
-    private Float price;
 
-    @Getter
-    @Setter
-    @Column(name = "quant")
-    private int quantity;
-
-    @Getter
-    @Setter
-    @Column(name = "extra")
+    private String codigo;
+    private Float preco;
+    private Boolean pizza;
+    private Integer tamanho;
     private String extra;
-
-    @Getter
-    @Setter
-    @Column(name = "remove")
     private String remove;
+    @ManyToMany
+    private List<Flavor> flavor;
 
-    @OneToOne
-    @JoinColumn(name = "flavor_id") // Establishing the OneToOne relationship with Flavor
-    private Flavor flavor;
+    public Item() {
+    }
 
-    @ManyToOne
-    @JoinColumn(name = "order_id")
-    private Order order;
+    public Item(Long id, String codigo, Float preco, Boolean pizza) {
+        this.id = id;
+        this.codigo = codigo;
+        this.preco = preco;
+        this.pizza = pizza;
+    }
 
+    public Item(Long id, String codigo, Float preco, Boolean pizza, Integer tamanho, String extra, String remove) {
+        this.id = id;
+        this.codigo = codigo;
+        this.preco = preco;
+        this.pizza = pizza;
+        this.tamanho = tamanho;
+        this.extra = extra;
+        this.remove = remove;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public Float getPreco() {
+        return preco;
+    }
+
+    public void setPreco(Float preco) {
+        this.preco = preco;
+    }
+
+    public Boolean getPizza() {
+        return pizza;
+    }
+
+    public void setPizza(Boolean pizza) {
+        this.pizza = pizza;
+    }
+
+    public Integer getTamanho() {
+        return tamanho;
+    }
+
+    public void setTamanho(Integer tamanho) {
+        this.tamanho = tamanho;
+    }
+
+    public String getExtra() {
+        return extra;
+    }
+
+    public void setExtra(String extra) {
+        this.extra = extra;
+    }
+
+    public String getRemove() {
+        return remove;
+    }
+
+    public void setRemove(String remove) {
+        this.remove = remove;
+    }
 }
