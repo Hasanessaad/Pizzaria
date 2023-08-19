@@ -1,4 +1,4 @@
 package Pizzaria.example.Pizzariadohabibi.Controller;
 
-public class SaborController {
+public class FlavorController {
 }

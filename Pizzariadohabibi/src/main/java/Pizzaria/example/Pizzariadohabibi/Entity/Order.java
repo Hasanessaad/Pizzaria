@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-@Table(name = "Order",schema = "public")
+@Table(name = "orders",schema = "public")
 public class Order {
 
     @Id
@@ -16,11 +16,6 @@ public class Order {
     @Setter
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Getter
-    @Setter
-    @Column(name = "timestamp")
-    private LocalDateTime timestamp;
 
     @Getter
     @Setter

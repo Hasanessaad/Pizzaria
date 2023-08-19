@@ -17,10 +17,6 @@ public class OrderDto {
 
     @Getter
     @Setter
-    private LocalDateTime timestamp;
-
-    @Getter
-    @Setter
     private Float payment;
 
     @Getter
